@@ -68,3 +68,22 @@
 .btn:hover {
   background: #333;
 }
+
+.btn:disabled {
+  background: #ccc;
+  cursor: initial;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

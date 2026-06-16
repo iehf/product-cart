@@ -1,33 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { CartItemType } from "@/lib/types";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
 import styles from "@/components/CartList.module.css";
-
-const mockItems: CartItemType[] = [
-  {
-    product: {
-      id: 1,
-      name: "Running Shoes",
-      price: 89.99,
-      image: "/products/running-shoes.jpg",
-      category: "Sport",
-    },
-    quantity: 1,
-  },
-  {
-    product: {
-      id: 3,
-      name: "Dumbbell Set",
-      price: 59.99,
-      image: "/products/dumbbell-set.jpg",
-      category: "Sport",
-    },
-    quantity: 2,
-  },
-];
+import { useCartStore } from "@/store/cartStore";
 
 const TAX_RATE = 0.1;
 
@@ -36,60 +13,40 @@ interface CartListProps {
 }
 
 const CartList = ({ variant = "page" }: CartListProps) => {
-  const [items, setItems] = useState<CartItemType[]>(mockItems);
+  const itemsInCart = useCartStore((state) => state.items);
+  const { increaseQty, decreaseQty, removeItem } = useCartStore();
   const [coupon, setCoupon] = useState(false);
 
-  const subtotal = items.reduce(
+  const subtotal = itemsInCart.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
-    0
+    0,
   );
   const tax = subtotal * TAX_RATE;
   const grandTotal = subtotal + tax;
 
-  const increase = (id: number) =>
-    setItems((prev) =>
-      prev.map((item) =>
-        item.product.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-
-  const decrease = (id: number) =>
-    setItems((prev) =>
-      prev
-        .map((item) =>
-          item.product.id === id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-        .filter((item) => item.quantity > 0)
-    );
-
-  const remove = (id: number) =>
-    setItems((prev) => prev.filter((item) => item.product.id !== id));
-
-  const summary = (
-    <CartSummary
-      subtotal={subtotal}
-      tax={tax}
-      grandTotal={grandTotal}
-      coupon={coupon}
-      onCoupon={() => setCoupon(true)}
-      variant={variant}
-    />
-  );
-
   return (
-    <div className={variant === "page" ? styles.wrapperPage : styles.wrapperModal}>
+    <div
+      className={variant === "page" ? styles.wrapperPage : styles.wrapperModal}
+    >
       <div className={styles.items}>
-        {items.map((item) => (
+        {itemsInCart.map((item) => (
           <CartItem
             key={item.product.id}
             {...item}
-            onIncrease={() => increase(item.product.id)}
-            onDecrease={() => decrease(item.product.id)}
-            onRemove={() => remove(item.product.id)}
+            onIncrease={() => increaseQty(item.product.id)}
+            onDecrease={() => decreaseQty(item.product.id)}
+            onRemove={() => removeItem(item.product.id)}
           />
         ))}
       </div>
-      {summary}
+      <CartSummary
+        subtotal={subtotal}
+        tax={tax}
+        grandTotal={grandTotal}
+        coupon={coupon}
+        onCoupon={() => setCoupon(true)}
+        variant={variant}
+      />
     </div>
   );
 };

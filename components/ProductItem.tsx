@@ -1,8 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import { Product } from "@/lib/types";
 import styles from "@/components/ProductItem.module.css";
+import { useCartStore } from "@/store/cartStore";
 
-const ProductItem = ({ name, price, image, category }: Product) => {
+const ProductItem = ({ id, name, price, image, category }: Product) => {
+  const addItem = useCartStore((state) => state.addItem);
+  const items = useCartStore((state) => state.items);
+  const hasHydrated = useCartStore((state) => state.hasHydrated);
+
+  const isItemInCart = hasHydrated && items.some((item) => item.product.id === id);
+
+  const handleAddToCart = () => {
+    addItem({ id, name, price, image, category });
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
@@ -12,7 +25,13 @@ const ProductItem = ({ name, price, image, category }: Product) => {
         <span className={styles.category}>{category}</span>
         <p className={styles.name}>{name}</p>
         <p className={styles.price}>${price.toFixed(2)}</p>
-        <button className={styles.btn}>Add to Cart</button>
+        <button
+          onClick={handleAddToCart}
+          className={styles.btn}
+          disabled={!hasHydrated || isItemInCart}
+        >
+          {!hasHydrated ? <span className={styles.spinner} /> : isItemInCart ? "Already Added" : "Add to Cart"}
+        </button>
       </div>
     </div>
   );
