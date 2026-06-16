@@ -1,10 +1,15 @@
 import styles from "@/components/ProductList.module.css";
+import ProductItem from "./ProductItem";
+import { products } from "@/lib/data/products";
 
 export default function ProductList() {
   return (
-    <ul>
-      <li>Product 1</li>
-      <li>Product 2</li>
+    <ul className={styles.grid}>
+      {products.map((product) => (
+        <li key={product.id}>
+          <ProductItem {...product} />
+        </li>
+      ))}
     </ul>
   );
 }
