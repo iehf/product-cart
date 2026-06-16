@@ -1,5 +1,6 @@
 import styles from "@/components/CartModal.module.css";
 import { createPortal } from "react-dom";
+import CartList from "./CartList";
 
 type CartModalInterface = {
   onClose?: () => void;
@@ -22,7 +23,7 @@ const CartModal = ({ onClose }: CartModalInterface) => {
           </button>
         </div>
         <div className={styles.body}>
-          {/* cart items go here */}
+          <CartList variant="modal"/>
         </div>
       </div>
     </>,

@@ -1,0 +1,73 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Page variant — sidebar style */
+.page {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Modal variant — flat, no background */
+.modal {
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.divider {
+  border-top: 1px solid #e5e5e5;
+  margin: 4px 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.couponBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2b7a2b;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.couponApplied {
+  color: #2b7a2b;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.checkout {
+  margin-top: 4px;
+  width: 100%;
+  padding: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.checkout:hover {
+  background: #333;
+}

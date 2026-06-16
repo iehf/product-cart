@@ -1,0 +1,19 @@
+/* Page: items + summary side by side */
+.wrapperPage {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Modal: items on top, summary below */
+.wrapperModal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
