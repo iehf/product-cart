@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Store",
@@ -16,7 +17,9 @@ export default function RootLayout({
       <body>
         <div id="rootModal"></div>
         <Header />
-        {children}
+        <main className="container" style={{ padding: "32px 24px" }}>
+          {children}
+        </main>
       </body>
     </html>
   );

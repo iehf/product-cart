@@ -2,21 +2,28 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from '@/components/Header.module.css';
+import styles from "@/components/Header.module.css";
 import CartIcon from "@/components/CartIcon";
+import logoImg from "@/public/logo.png";
+import Image from "next/image";
 
-export default function Home() {
+export default function Header() {
   const pathname = usePathname();
   const isCartPage = pathname === "/cart";
+
   return (
-    <main>
-      <header>
-        <nav>
+    <header className={styles.header}>
+      <div className={styles.inner}>
+      <div className={styles.left}>
+        <Image src={logoImg} alt="logo" className={styles.logo} />
+        <nav className={styles.nav}>
           <Link href="/">Home</Link>
           <Link href="/cart">Cart</Link>
+          <Link href="/about">About</Link>
         </nav>
-        {!isCartPage && <CartIcon />}
-      </header>
-    </main>
+      </div>
+      {!isCartPage && <CartIcon />}
+      </div>
+    </header>
   );
 }
