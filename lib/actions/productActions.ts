@@ -46,16 +46,18 @@ export async function submitProduct(
     return { errors, values };
   }
 
+  const parsedPrice = parseFloat(price);
+
   const product: Product = {
     id: randomUUID(),
     name,
-    price: parseFloat(price),
-    image: "/products/placeholder.jpg",
+    price: parsedPrice,
+    image: image.name,
     category,
   };
 
   try {
-    await productService.saveProduct(product);
+    await productService.saveProduct(product, image);
     revalidatePath("/");
   } catch {
     return { errors: { general: "Failed to save product. Try again." } };

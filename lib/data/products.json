@@ -42,17 +42,10 @@
     "category": "Sport"
   },
   {
-    "id": "ff5aca4f-3639-4cf8-aec5-05a3cbeb7670",
+    "id": "f6780747-0107-4036-8888-61d186ae0361",
     "name": "Test",
-    "price": 2,
-    "image": "/products/placeholder.jpg",
-    "category": "wwww"
-  },
-  {
-    "id": "4d197674-1ca3-4a56-a413-308000000566",
-    "name": "New test",
-    "price": 55,
-    "image": "/products/placeholder.jpg",
+    "price": 3,
+    "image": "/products/e.png",
     "category": "wwww"
   }
 ]

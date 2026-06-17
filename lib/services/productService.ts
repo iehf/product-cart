@@ -6,7 +6,7 @@ export const productService = {
     return productRepository.getAll();
   },
 
-  saveProduct(product: Product) {
-    return productRepository.save(product);
+  saveProduct(product: Product, file: File) {
+    return productRepository.save(product, file);
   },
 };
