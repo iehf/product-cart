@@ -5,6 +5,7 @@ import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
 import styles from "@/components/Cart/CartList.module.css";
 import { useCartStore } from "@/store/cartStore";
+import { useShallow } from "zustand/react/shallow";
 
 const TAX_RATE = 0.1;
 
@@ -13,18 +14,24 @@ interface CartListProps {
 }
 
 const CartList = ({ variant = "page" }: CartListProps) => {
-  const itemsInCart = useCartStore((state) => state.items);
-  const { increaseQty, decreaseQty, removeItem } = useCartStore();
+  const { items, increaseQty, decreaseQty, removeItem } = useCartStore(
+    useShallow((state) => ({
+      items: state.items,
+      increaseQty: state.increaseQty,
+      decreaseQty: state.decreaseQty,
+      removeItem: state.removeItem,
+    })),
+  );
   const [coupon, setCoupon] = useState(false);
 
-  const subtotal = itemsInCart.reduce(
+  const subtotal = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
     0,
   );
   const tax = subtotal * TAX_RATE;
   const grandTotal = subtotal + tax;
 
-  const isCartEmty = itemsInCart.length <= 0;
+  const isCartEmty = items.length <= 0;
   return (
     <div
       className={variant === "page" ? styles.wrapperPage : styles.wrapperModal}
@@ -36,7 +43,7 @@ const CartList = ({ variant = "page" }: CartListProps) => {
       )}
       {!isCartEmty && (
         <div className={styles.items}>
-          {itemsInCart.map((item) => (
+          {items.map((item) => (
             <CartItem
               key={item.product.id}
               {...item}

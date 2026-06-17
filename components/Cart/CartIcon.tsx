@@ -5,20 +5,30 @@ import { useState } from "react";
 import CartModal from "./CartModal";
 import cartImg from "@/public/cart.png";
 import Image from "next/image";
-import { useCartStore } from "@/store/cartStore";
+import { useCartStore, selectCartTotalQuantity } from "@/store/cartStore";
+import { usePathname } from "next/navigation";
 
-export default function CartIcon() {
-  const [showModal, setShowModal] = useState(false);
-  const cartItems = useCartStore((state) => state.items);
+const CartIcon = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const totalQuantity = useCartStore(selectCartTotalQuantity);
+  const showQuantiy = totalQuantity > 0;
+  const pathname = usePathname();
+  const isCartPage = pathname === "/cart";
+
+  if (isCartPage) {
+    return null;
+  }
 
   return (
     <>
-      <button className={styles.btn} onClick={() => setShowModal(true)}>
+      <button className={styles.btn} onClick={() => setIsModalOpen(true)}>
         <Image src={cartImg} alt="cart" className={styles.icon} />
-        <span className={styles.badge}>{cartItems.length}</span>
+        {showQuantiy && <span className={styles.badge}>{totalQuantity}</span>}
       </button>
 
-      {showModal && <CartModal onClose={() => setShowModal(false)} />}
+      {isModalOpen && <CartModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }
+
+export default CartIcon;

@@ -1,4 +1,4 @@
-import classes from "@/components/Spinner/Spinner.module.css"
+import classes from "@/components/Spinner/Spinner.module.css";
 
 const Spinner = () => {
   return (
@@ -6,6 +6,6 @@ const Spinner = () => {
       <div className={classes.spinner} />
     </div>
   );
-}
+};
 
 export default Spinner;

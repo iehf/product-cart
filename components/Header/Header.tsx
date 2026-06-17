@@ -1,17 +1,10 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import styles from "@/components/Header/Header.module.css";
 import CartIcon from "@/components/Cart/CartIcon";
 import logoImg from "@/public/logo.png";
 import Image from "next/image";
 import NavLink from "@/components/Header/NavLink";
 
-export default function Header() {
-  const pathname = usePathname();
-  const isCartPage = pathname === "/cart";
-
+const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -23,8 +16,10 @@ export default function Header() {
             <NavLink href="/about">About</NavLink>
           </nav>
         </div>
-        {!isCartPage && <CartIcon />}
+        <CartIcon />
       </div>
     </header>
   );
 }
+
+export default Header;
