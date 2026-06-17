@@ -1,0 +1,110 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form .field .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.form .field input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background: #fff;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #1a1a1a;
+}
+
+.error {
+  font-size: 0.85rem;
+  color: #e03131;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cancelBtn {
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+  transition: border-color 0.15s;
+}
+
+.cancelBtn:hover {
+  border-color: #999;
+  color: #1a1a1a;
+}
+
+.submitBtn {
+  padding: 10px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submitBtn:hover {
+  background: #333;
+}
+
+.fileInputHidden {
+  display: none;
+}
+
+.imageUpload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f3f3;
+  border: 2px dashed #ddd;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.imageUpload:hover {
+  border-color: #999;
+}
+
+.uploadText {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.previewImg {
+  object-fit: cover;
+}
