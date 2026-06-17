@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./error.module.css";
+import classes from "./error.module.css";
 
 type ErrorPageProps = {
   error: Error & { digest?: string };
@@ -9,10 +9,10 @@ type ErrorPageProps = {
 
 export default function ErrorPage({ error, reset }: ErrorPageProps) {
   return (
-    <section className={styles.wrapper}>
-      <h1 className={styles.title}>Something went wrong</h1>
+    <section className={classes.wrapper}>
+      <h1 className={classes.title}>Something went wrong</h1>
 
-      <p className={styles.text}>We could not load this page.</p>
+      <p className={classes.text}>We could not load this page.</p>
 
       {process.env.NODE_ENV === "development" && (
         <details>
@@ -21,7 +21,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
         </details>
       )}
 
-      <button type="button" onClick={reset} className={styles.button}>
+      <button type="button" onClick={reset} className={classes.button}>
         Try again
       </button>
     </section>

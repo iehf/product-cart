@@ -1,14 +1,14 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import classes from "./page.module.css";
 import storeImage from "@/public/about/store.jpg";
 import mapImage from "@/public/about/map.jpg";
 import { team } from "@/lib/data/team";
 
 export default function About() {
   return (
-    <div className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroText}>
+    <div className={classes.page}>
+      <section className={classes.hero}>
+        <div className={classes.heroText}>
           <h1>About Us</h1>
           <p>
             We are a passionate team of sport enthusiasts dedicated to bringing
@@ -16,60 +16,60 @@ export default function About() {
             everything you need to stay active and reach your goals.
           </p>
         </div>
-        <div className={styles.heroImageWrapper}>
+        <div className={classes.heroImageWrapper}>
           <Image
             src={storeImage}
             alt="Our Store"
             fill
-            className={styles.heroImage}
+            className={classes.heroImage}
           />
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={classes.section}>
         <h2>Our Team</h2>
-        <div className={styles.team}>
+        <div className={classes.team}>
           {team.map((member) => (
-            <div key={member.name} className={styles.member}>
-              <div className={styles.avatarWrapper}>
+            <div key={member.name} className={classes.member}>
+              <div className={classes.avatarWrapper}>
                 <Image
                   src={member.avatar}
                   alt={member.name}
                   width={100}
                   height={100}
-                  className={styles.avatar}
+                  className={classes.avatar}
                 />
               </div>
-              <p className={styles.memberName}>{member.name}</p>
-              <p className={styles.memberRole}>{member.position}</p>
+              <p className={classes.memberName}>{member.name}</p>
+              <p className={classes.memberRole}>{member.position}</p>
             </div>
           ))}
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={classes.section}>
         <h2>Contact Us</h2>
-        <div className={styles.contacts}>
-          <div className={styles.contactItem}>
-            <span className={styles.label}>Phone</span>
+        <div className={classes.contacts}>
+          <div className={classes.contactItem}>
+            <span className={classes.label}>Phone</span>
             <a href="tel:+10000000001">+1 (000) 000-0001</a>
           </div>
-          <div className={styles.contactItem}>
-            <span className={styles.label}>Phone</span>
+          <div className={classes.contactItem}>
+            <span className={classes.label}>Phone</span>
             <a href="tel:+10000000002">+1 (000) 000-0002</a>
           </div>
-          <div className={styles.contactItem}>
-            <span className={styles.label}>Email</span>
+          <div className={classes.contactItem}>
+            <span className={classes.label}>Email</span>
             <a href="mailto:hello@sportstore.com">hello@sportstore.com</a>
           </div>
-          <div className={styles.contactItem}>
-            <span className={styles.label}>Address</span>
+          <div className={classes.contactItem}>
+            <span className={classes.label}>Address</span>
             <span>123 Sport Ave, New York, NY 10001</span>
           </div>
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={classes.section}>
         <h2>Find Us</h2>
-        <div className={styles.mapWrapper}>
-          <Image src={mapImage} alt="map" fill className={styles.map} />
+        <div className={classes.mapWrapper}>
+          <Image src={mapImage} alt="map" fill className={classes.map} />
         </div>
       </section>
     </div>

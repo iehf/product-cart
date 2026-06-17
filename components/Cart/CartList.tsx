@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
-import styles from "@/components/Cart/CartList.module.css";
+import classes from "@/components/Cart/CartList.module.css";
 import { useCartStore } from "@/store/cartStore";
 import { useShallow } from "zustand/react/shallow";
 
@@ -34,15 +34,15 @@ const CartList = ({ variant = "page" }: CartListProps) => {
   const isCartEmty = items.length <= 0;
   return (
     <div
-      className={variant === "page" ? styles.wrapperPage : styles.wrapperModal}
+      className={variant === "page" ? classes.wrapperPage : classes.wrapperModal}
     >
       {isCartEmty && (
-        <p className={styles.empty}>
+        <p className={classes.empty}>
           Your cart is empty. Add your first product!
         </p>
       )}
       {!isCartEmty && (
-        <div className={styles.items}>
+        <div className={classes.items}>
           {items.map((item) => (
             <CartItem
               key={item.product.id}

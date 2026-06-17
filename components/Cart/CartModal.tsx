@@ -1,7 +1,7 @@
 "use client";
 
 import { createPortal } from "react-dom";
-import styles from "@/components/Cart/CartModal.module.css";
+import classes from "@/components/Cart/CartModal.module.css";
 import CartList from "./CartList";
 
 type CartModalProps = {
@@ -14,15 +14,15 @@ const CartModal = ({ onClose }: CartModalProps) => {
 
   return createPortal(
     <>
-      <div className={styles.overlay} onClick={onClose} />
-      <div className={styles.modal}>
-        <div className={styles.header}>
+      <div className={classes.overlay} onClick={onClose} />
+      <div className={classes.modal}>
+        <div className={classes.header}>
           <h2>Your Cart</h2>
-          <button className={styles.closeBtn} onClick={onClose}>
+          <button className={classes.closeBtn} onClick={onClose}>
             &times;
           </button>
         </div>
-        <div className={styles.body}>
+        <div className={classes.body}>
           <CartList variant="modal" />
         </div>
       </div>

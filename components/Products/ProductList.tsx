@@ -1,4 +1,4 @@
-import styles from "@/components/Products/ProductList.module.css";
+import classes from "@/components/Products/ProductList.module.css";
 import ProductItem from "./ProductItem";
 import { Product } from "@/lib/types";
 
@@ -7,7 +7,7 @@ interface ProductListProps{
 }
 const ProductList = ({products}: ProductListProps) => {
   return (
-    <ul className={styles.grid}>
+    <ul className={classes.grid}>
       {products.map((product) => (
         <li key={product.id}>
           <ProductItem {...product} />

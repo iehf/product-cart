@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/Cart/CartIcon.module.css";
+import classes from "@/components/Cart/CartIcon.module.css";
 import { useState } from "react";
 import CartModal from "./CartModal";
 import cartImg from "@/public/cart.png";
@@ -21,9 +21,9 @@ const CartIcon = () => {
 
   return (
     <>
-      <button className={styles.btn} onClick={() => setIsModalOpen(true)}>
-        <Image src={cartImg} alt="cart" className={styles.icon} />
-        {showQuantiy && <span className={styles.badge}>{totalQuantity}</span>}
+      <button className={classes.btn} onClick={() => setIsModalOpen(true)}>
+        <Image src={cartImg} alt="cart" className={classes.icon} />
+        {showQuantiy && <span className={classes.badge}>{totalQuantity}</span>}
       </button>
 
       {isModalOpen && <CartModal onClose={() => setIsModalOpen(false)} />}
