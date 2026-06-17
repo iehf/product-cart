@@ -1,57 +1,95 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import classes from "@/components/Products/AddProductForm.module.css";
+import { submitProduct, ProductFormState } from "@/lib/actions/productActions";
 
 interface AddProductFormProps {
   onClose: () => void;
 }
 
+const initialState: ProductFormState = { errors: {} };
+
 const AddProductForm = ({ onClose }: AddProductFormProps) => {
-  const [error, setError] = useState<string | null>(null);
+  const [formState, formAction, isPending] = useActionState(
+    submitProduct,
+    initialState,
+  );
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setPreview(URL.createObjectURL(file));
-  };
+  useEffect(() => {
+    if (formState.success) onClose();
+  }, [formState.success, onClose]);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError(null);
+  useEffect(() => {
+    return () => {
+      if (preview) URL.revokeObjectURL(preview);
+    };
+  }, [preview]);
 
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const price = parseFloat(formData.get("price") as string);
-    const category = formData.get("category") as string;
-    const image = formData.get("image") as File;
+  const handleImageChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0] || null;
+      setSelectedFile(file);
+      if (file) setPreview(URL.createObjectURL(file));
+    },
+    [],
+  );
 
-    if (!name || !price || !category || !image?.name) {
-      setError("All fields are required.");
-      return;
-    }
-
-    console.log({ name, price, category, image });
-    onClose();
-  };
+  const handleSubmit = useCallback(
+    (formData: FormData) => {
+      if (selectedFile) formData.set("image", selectedFile);
+      formAction(formData);
+    },
+    [selectedFile, formAction],
+  );
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={classes.form} action={handleSubmit}>
       <div className={classes.field}>
         <label htmlFor="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Running Shoes" />
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Running Shoes"
+          defaultValue={formState.values?.name}
+        />
+        {formState.errors.name && (
+          <p className={classes.error}>{formState.errors.name}</p>
+        )}
       </div>
 
       <div className={classes.field}>
         <label htmlFor="price">Price ($)</label>
-        <input id="price" name="price" type="number" step="0.01" min="0" placeholder="29.99" />
+        <input
+          id="price"
+          name="price"
+          type="number"
+          step="0.01"
+          min="0"
+          placeholder="29.99"
+          defaultValue={formState.values?.price}
+        />
+        {formState.errors.price && (
+          <p className={classes.error}>{formState.errors.price}</p>
+        )}
       </div>
 
       <div className={classes.field}>
         <label htmlFor="category">Category</label>
-        <input id="category" name="category" type="text" placeholder="Sport" />
+        <input
+          id="category"
+          name="category"
+          type="text"
+          placeholder="Sport"
+          defaultValue={formState.values?.category}
+        />
+        {formState.errors.category && (
+          <p className={classes.error}>{formState.errors.category}</p>
+        )}
       </div>
 
       <div className={classes.field}>
@@ -66,21 +104,27 @@ const AddProductForm = ({ onClose }: AddProductFormProps) => {
         />
         <label htmlFor="image" className={classes.imageUpload}>
           {preview ? (
-            <Image src={preview} alt="preview" fill className={classes.previewImg} />
+            <Image
+              src={preview}
+              alt="preview"
+              fill
+              className={classes.previewImg}
+            />
           ) : (
             <span className={classes.uploadText}>+ Add Image</span>
           )}
         </label>
+        {formState.errors.image && (
+          <p className={classes.error}>{formState.errors.image}</p>
+        )}
       </div>
-
-      {error && <p className={classes.error}>{error}</p>}
 
       <div className={classes.actions}>
         <button type="button" className={classes.cancelBtn} onClick={onClose}>
           Cancel
         </button>
-        <button type="submit" className={classes.submitBtn}>
-          Add Product
+        <button type="submit" className={classes.submitBtn} disabled={isPending}>
+          {isPending ? "Adding..." : "Add Product"}
         </button>
       </div>
     </form>
