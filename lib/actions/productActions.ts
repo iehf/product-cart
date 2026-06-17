@@ -1,5 +1,10 @@
 "use server";
 
+import { Product } from "../types";
+import { randomUUID } from "crypto";
+import { revalidatePath } from "next/cache";
+import { productService } from "@/lib/services/productService";
+
 export interface ProductFormValues {
   name?: string;
   price?: string;
@@ -12,6 +17,7 @@ export interface ProductFormState {
     price?: string;
     category?: string;
     image?: string;
+    general?: string;
   };
   values?: ProductFormValues;
   success?: boolean;
@@ -40,7 +46,20 @@ export async function submitProduct(
     return { errors, values };
   }
 
-  console.log({ name, price, category, image });
+  const product: Product = {
+    id: randomUUID(),
+    name,
+    price: parseFloat(price),
+    image: "/products/placeholder.jpg",
+    category,
+  };
+
+  try {
+    await productService.saveProduct(product);
+    revalidatePath("/");
+  } catch {
+    return { errors: { general: "Failed to save product. Try again." } };
+  }
 
   return { errors: {}, success: true };
 }

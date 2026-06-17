@@ -119,11 +119,24 @@ const AddProductForm = ({ onClose }: AddProductFormProps) => {
         )}
       </div>
 
+      {formState.errors.general && (
+        <p className={classes.error}>{formState.errors.general}</p>
+      )}
+
       <div className={classes.actions}>
-        <button type="button" className={classes.cancelBtn} onClick={onClose}>
+        <button
+          type="button"
+          className={classes.cancelBtn}
+          disabled={isPending}
+          onClick={onClose}
+        >
           Cancel
         </button>
-        <button type="submit" className={classes.submitBtn} disabled={isPending}>
+        <button
+          type="submit"
+          className={classes.submitBtn}
+          disabled={isPending}
+        >
           {isPending ? "Adding..." : "Add Product"}
         </button>
       </div>

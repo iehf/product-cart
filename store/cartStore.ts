@@ -7,9 +7,9 @@ interface CartStore {
   hasHydrated: boolean;
   setHasHydrated: (value: boolean) => void;
   addItem: (product: Product) => void;
-  removeItem: (id: number) => void;
-  increaseQty: (id: number) => void;
-  decreaseQty: (id: number) => void;
+  removeItem: (id: string) => void;
+  increaseQty: (id: string) => void;
+  decreaseQty: (id: string) => void;
 }
 
 export const useCartStore = create<CartStore>()(
