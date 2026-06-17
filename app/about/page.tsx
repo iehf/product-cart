@@ -4,7 +4,7 @@ import storeImage from "@/public/about/store.jpg";
 import mapImage from "@/public/about/map.jpg";
 import { team } from "@/lib/data/team";
 
-const About = () => {
+export default function About() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
@@ -74,6 +74,4 @@ const About = () => {
       </section>
     </div>
   );
-};
-
-export default About;
+}

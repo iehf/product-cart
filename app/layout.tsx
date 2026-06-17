@@ -17,9 +17,7 @@ export default function RootLayout({
       <body>
         <div id="rootModal"></div>
         <Header />
-        <main className="container">
-          {children}
-        </main>
+        <main className="container">{children}</main>
       </body>
     </html>
   );
