@@ -1,7 +1,11 @@
 import ProductList from "@/components/Products/ProductList";
+import { productService } from "@/lib/services/productService";
 
-export default function Home() {
+
+export default async function Home() {
+  const products = await productService.getProducts();
+
   return (
-      <ProductList />
+      <ProductList products={products}/>
   );
 }

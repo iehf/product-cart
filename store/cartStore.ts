@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { CartItemType, Product } from "@/lib/types";
+import { CartProduct, Product } from "@/lib/types";
 import { persist } from "zustand/middleware";
 
 interface CartStore {
-  items: CartItemType[];
+  items: CartProduct[];
   hasHydrated: boolean;
   setHasHydrated: (value: boolean) => void;
   addItem: (product: Product) => void;

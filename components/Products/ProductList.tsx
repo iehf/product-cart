@@ -1,8 +1,11 @@
 import styles from "@/components/Products/ProductList.module.css";
 import ProductItem from "./ProductItem";
-import { products } from "@/lib/data/products";
+import { Product } from "@/lib/types";
 
-export default function ProductList() {
+interface ProductListProps{
+  products: Product[];
+}
+const ProductList = ({products}: ProductListProps) => {
   return (
     <ul className={styles.grid}>
       {products.map((product) => (
@@ -13,3 +16,5 @@ export default function ProductList() {
     </ul>
   );
 }
+
+export default ProductList;

@@ -1,14 +1,20 @@
 import Image from "next/image";
-import { CartItemType } from "@/lib/types";
+import { CartProduct } from "@/lib/types";
 import styles from "@/components/Cart/CartItem.module.css";
 
-interface CartItemProps extends CartItemType {
+interface CartItemProps extends CartProduct {
   onIncrease: () => void;
   onDecrease: () => void;
   onRemove: () => void;
 }
 
-const CartItem = ({ product, quantity, onIncrease, onDecrease, onRemove }: CartItemProps) => {
+const CartItem = ({
+  product,
+  quantity,
+  onIncrease,
+  onDecrease,
+  onRemove,
+}: CartItemProps) => {
   const total = (product.price * quantity).toFixed(2);
 
   return (
@@ -26,14 +32,20 @@ const CartItem = ({ product, quantity, onIncrease, onDecrease, onRemove }: CartI
       <p className={styles.price}>${product.price.toFixed(2)}</p>
 
       <div className={styles.qty}>
-        <button className={styles.qtyBtn} onClick={onDecrease}>−</button>
+        <button className={styles.qtyBtn} onClick={onDecrease}>
+          −
+        </button>
         <span>{quantity}</span>
-        <button className={styles.qtyBtn} onClick={onIncrease}>+</button>
+        <button className={styles.qtyBtn} onClick={onIncrease}>
+          +
+        </button>
       </div>
 
       <div className={styles.totalWrapper}>
         <p className={styles.total}>${total}</p>
-        <button className={styles.removeBtn} onClick={onRemove}>×</button>
+        <button className={styles.removeBtn} onClick={onRemove}>
+          ×
+        </button>
       </div>
     </div>
   );

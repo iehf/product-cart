@@ -6,7 +6,7 @@ export interface Product {
   category: string;
 }
 
-export interface CartItemType {
+export interface CartProduct {
   product: Product;
   quantity: number;
 }

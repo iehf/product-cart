@@ -30,7 +30,9 @@ const CartList = ({ variant = "page" }: CartListProps) => {
       className={variant === "page" ? styles.wrapperPage : styles.wrapperModal}
     >
       {isCartEmty && (
-        <p className={styles.empty}>Your cart is empty. Add your first product!</p>
+        <p className={styles.empty}>
+          Your cart is empty. Add your first product!
+        </p>
       )}
       {!isCartEmty && (
         <div className={styles.items}>
