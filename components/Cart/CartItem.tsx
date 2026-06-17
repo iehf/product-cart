@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CartItemType } from "@/lib/types";
-import styles from "@/components/CartItem.module.css";
+import styles from "@/components/Cart/CartItem.module.css";
 
 interface CartItemProps extends CartItemType {
   onIncrease: () => void;

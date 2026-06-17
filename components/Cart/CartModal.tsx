@@ -1,16 +1,16 @@
-import styles from "@/components/CartModal.module.css";
+"use client";
+
 import { createPortal } from "react-dom";
+import styles from "@/components/Cart/CartModal.module.css";
 import CartList from "./CartList";
 
-type CartModalInterface = {
+type CartModalProps = {
   onClose?: () => void;
 };
 
-const CartModal = ({ onClose }: CartModalInterface) => {
+const CartModal = ({ onClose }: CartModalProps) => {
   const rootModal = document.getElementById("rootModal");
-  if (!rootModal) {
-    return null;
-  }
+  if (!rootModal) return null;
 
   return createPortal(
     <>
@@ -23,7 +23,7 @@ const CartModal = ({ onClose }: CartModalInterface) => {
           </button>
         </div>
         <div className={styles.body}>
-          <CartList variant="modal"/>
+          <CartList variant="modal" />
         </div>
       </div>
     </>,

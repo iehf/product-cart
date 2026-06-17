@@ -1,4 +1,4 @@
-import styles from "@/components/ProductList.module.css";
+import styles from "@/components/Products/ProductList.module.css";
 import ProductItem from "./ProductItem";
 import { products } from "@/lib/data/products";
 

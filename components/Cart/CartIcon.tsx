@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/CartIcon.module.css";
+import styles from "@/components/Cart/CartIcon.module.css";
 import { useState } from "react";
 import CartModal from "./CartModal";
 import cartImg from "@/public/cart.png";

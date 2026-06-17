@@ -1,9 +1,11 @@
-import CartList from "@/components/CartList";
+import CartList from "@/components/Cart/CartList";
 
-export default function Home() {
+const CartPage = () => {
   return (
     <div>
       <CartList variant="page" />
     </div>
   );
-}
+};
+
+export default CartPage;

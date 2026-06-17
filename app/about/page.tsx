@@ -4,7 +4,7 @@ import storeImage from "@/public/about/store.jpg";
 import mapImage from "@/public/about/map.jpg";
 import { team } from "@/lib/data/team";
 
-export default function About() {
+const About = () => {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
@@ -17,7 +17,12 @@ export default function About() {
           </p>
         </div>
         <div className={styles.heroImageWrapper}>
-          <Image src={storeImage} alt="Our Store" fill className={styles.heroImage} />
+          <Image
+            src={storeImage}
+            alt="Our Store"
+            fill
+            className={styles.heroImage}
+          />
         </div>
       </section>
       <section className={styles.section}>
@@ -69,4 +74,6 @@ export default function About() {
       </section>
     </div>
   );
-}
+};
+
+export default About;

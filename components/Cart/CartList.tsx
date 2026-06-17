@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
-import styles from "@/components/CartList.module.css";
+import styles from "@/components/Cart/CartList.module.css";
 import { useCartStore } from "@/store/cartStore";
 
 const TAX_RATE = 0.1;
@@ -24,21 +24,27 @@ const CartList = ({ variant = "page" }: CartListProps) => {
   const tax = subtotal * TAX_RATE;
   const grandTotal = subtotal + tax;
 
+  const isCartEmty = itemsInCart.length <= 0;
   return (
     <div
       className={variant === "page" ? styles.wrapperPage : styles.wrapperModal}
     >
-      <div className={styles.items}>
-        {itemsInCart.map((item) => (
-          <CartItem
-            key={item.product.id}
-            {...item}
-            onIncrease={() => increaseQty(item.product.id)}
-            onDecrease={() => decreaseQty(item.product.id)}
-            onRemove={() => removeItem(item.product.id)}
-          />
-        ))}
-      </div>
+      {isCartEmty && (
+        <p className={styles.empty}>Your cart is empty. Add your first product!</p>
+      )}
+      {!isCartEmty && (
+        <div className={styles.items}>
+          {itemsInCart.map((item) => (
+            <CartItem
+              key={item.product.id}
+              {...item}
+              onIncrease={() => increaseQty(item.product.id)}
+              onDecrease={() => decreaseQty(item.product.id)}
+              onRemove={() => removeItem(item.product.id)}
+            />
+          ))}
+        </div>
+      )}
       <CartSummary
         subtotal={subtotal}
         tax={tax}

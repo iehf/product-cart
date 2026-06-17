@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Product } from "@/lib/types";
-import styles from "@/components/ProductItem.module.css";
+import styles from "@/components/Products/ProductItem.module.css";
 import { useCartStore } from "@/store/cartStore";
 
 const ProductItem = ({ id, name, price, image, category }: Product) => {

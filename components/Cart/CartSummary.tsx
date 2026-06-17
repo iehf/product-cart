@@ -1,4 +1,4 @@
-import styles from "@/components/CartSummary.module.css";
+import styles from "@/components/Cart/CartSummary.module.css";
 
 interface CartSummaryProps {
   subtotal: number;
