@@ -1,0 +1,254 @@
+2026-06-17 13:58:49 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459","message":""}} 
+2026-06-17 13:58:49 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459","message":""}} 
+2026-06-17 13:58:49 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459","message":""}} 
+2026-06-17 13:58:49 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459","message":""}} 
+2026-06-17 13:58:50 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459","message":""}} 
+2026-06-17 13:58:50 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459","message":""}} 
+2026-06-17 13:58:51 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459"}} 
+2026-06-17 13:58:51 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"2584304459"}} 
+2026-06-17 13:58:53 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"1495885451"}} 
+2026-06-17 13:58:53 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"1495885451"}} 
+2026-06-17 13:58:56 ERROR {"layer":"repository","repository":"FileProductRepository","method":"getAll","error":{"digest":"1495885451"}} 
+2026-06-17 14:00:31 ERROR [repository] FileProductRepository.getAll failed11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:00:31 ERROR [repository] FileProductRepository.getAll failed11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:00:47 ERROR [repository] FileProductRepository.getAll failed11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:00:47 ERROR [repository] FileProductRepository.getAll failed11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:00:52 ERROR [repository] FileProductRepository.getAll failed11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:01:25 ERROR [repository] FileProductRepository.getAll failed:11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:01:25 ERROR [repository] FileProductRepository.getAll failed:11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:01:27 ERROR [repository] FileProductRepository.getAll failed: 11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
+2026-06-17 14:01:27 ERROR [repository] FileProductRepository.getAll failed: 11111
+{"digest":"1774528932"}
+Error: 11111
+    at FileProductRepository.getAll (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:140:19)
+    at Object.getProducts (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:170:162)
+    at Home (D:\product-cart\.next\dev\server\chunks\ssr\[root-of-the-server]__17lg_6v._.js:188:176)
+    at Object.react_stack_bottom_frame (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:268077)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:159664)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221052)
+    at outlineTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:164857)
+    at renderFunctionComponent (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:158663)
+    at renderElement (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:178263)
+    at renderModelDestructive (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:182086)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:170748
+    at Object.toJSON (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:172065)
+    at stringify (<anonymous>)
+    at emitChunk (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:220399)
+    at retryTask (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:221542)
+    at performWork (D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:223062)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at D:\product-cart\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js:53:226810
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8) 
