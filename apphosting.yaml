@@ -24,8 +24,10 @@ runConfig:
   #   secret: mySecretRef
 env:
   - variable: APP_FIREBASE_PRIVATE_KEY
-    secret: FIREBASE_PRIVATE_KEY
+    secret: APP_FIREBASE_PRIVATE_KEY
   - variable: APP_FIREBASE_PROJECT_ID
     secret: APP_FIREBASE_PROJECT_ID
   - variable: APP_FIREBASE_CLIENT_EMAIL
     secret: APP_FIREBASE_CLIENT_EMAIL
+  - variable: APP_FIREBASE_STORAGE_BUCKET
+    secret: APP_FIREBASE_STORAGE_BUCKET
