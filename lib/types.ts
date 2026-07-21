@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface Product {
   id: string;
   name: string;
@@ -13,6 +15,6 @@ export interface CartProduct {
 
 export interface TeamMember {
   name: string;
-  avatar: string;
+  avatar: StaticImageData;
   position: string;
 }
