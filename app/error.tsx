@@ -14,7 +14,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
 
       <p className={classes.text}>We could not load this page.</p>
 
-      {process.env.NODE_ENV === "development" && (
+      {process.env.NODE_ENV === "production" && (
         <details>
           <summary>Error details</summary>
           <pre>{error.message}</pre>
