@@ -1,13 +1,7 @@
-import path from "path";
-import logger from "simple-node-logger";
-
-const log = logger.createSimpleLogger({
-  logFilePath: path.join(
-    process.cwd(),
-    "logs",
-    "app.log"
-  ),
-  timestampFormat: "YYYY-MM-DD HH:mm:ss",
-});
+const log = {
+  info: (...args: unknown[]) => console.log(...args),
+  error: (...args: unknown[]) => console.error(...args),
+  warn: (...args: unknown[]) => console.warn(...args),
+};
 
 export default log;
