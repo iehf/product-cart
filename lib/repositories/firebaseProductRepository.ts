@@ -20,9 +20,10 @@ export class FirebaseProductRepository implements ProductRepository {
   }
 
   async save(product: Product, file: File): Promise<void> {
+    const bucket = getStorage(getFirebaseAdminApp()).bucket();
+    const fileRef = bucket.file(`products/${file.name}`);
+
     try {
-      const bucket = getStorage(getFirebaseAdminApp()).bucket();
-      const fileRef = bucket.file(`products/${file.name}`);
       await fileRef.save(Buffer.from(await file.arrayBuffer()));
       await fileRef.makePublic();
 
@@ -34,6 +35,7 @@ export class FirebaseProductRepository implements ProductRepository {
       const db = getFirestore(getFirebaseAdminApp());
       await db.collection(COLLECTION).doc(product.id).set(productWithImage);
     } catch (error) {
+      await fileRef.delete().catch(() => {});
       log.error("[repository] FirebaseProductRepository.save failed: ", error);
       throw error;
     }

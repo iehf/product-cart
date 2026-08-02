@@ -1,7 +1,7 @@
 import { Product } from "@/lib/types";
 import { ProductRepository } from "./productRepository.interface";
 import log from "@/lib/logger/logger";
-import { readFile, writeFile } from "fs/promises";
+import { readFile, writeFile, unlink } from "fs/promises";
 import path from "path";
 
 const dataFilepath = path.join(process.cwd(), "lib/data/products.json");
@@ -19,10 +19,12 @@ export class FileProductRepository implements ProductRepository {
   }
 
   async save(product: Product, file: File): Promise<void> {
+    const imagePath = path.join(uploadDir, file.name);
+
     try {
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      await writeFile(path.join(uploadDir, file.name), buffer);
+      await writeFile(imagePath, buffer);
 
       const productWithImage: Product = {
         ...product,
@@ -33,6 +35,7 @@ export class FileProductRepository implements ProductRepository {
       products.push(productWithImage);
       await writeFile(dataFilepath, JSON.stringify(products, null, 2));
     } catch (error) {
+      await unlink(imagePath).catch(() => {});
       log.error("[repository] FileProductRepository.save failed: ", error);
       throw error;
     }

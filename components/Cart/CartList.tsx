@@ -47,9 +47,9 @@ const CartList = ({ variant = "page" }: CartListProps) => {
             <CartItem
               key={item.product.id}
               {...item}
-              onIncrease={() => increaseQty(item.product.id)}
-              onDecrease={() => decreaseQty(item.product.id)}
-              onRemove={() => removeItem(item.product.id)}
+              onIncrease={increaseQty}
+              onDecrease={decreaseQty}
+              onRemove={removeItem}
             />
           ))}
         </div>

@@ -4,19 +4,13 @@ import Image from "next/image";
 import { Product } from "@/lib/types";
 import classes from "@/components/Products/ProductItem.module.css";
 import { useCartStore } from "@/store/cartStore";
-import { useShallow } from "zustand/react/shallow";
 
 const ProductItem = ({ id, name, price, image, category }: Product) => {
-  const { items, hasHydrated, addItem, } = useCartStore(
-      useShallow((state) => ({
-        items: state.items,
-        hasHydrated: state.hasHydrated,
-        addItem: state.addItem,
-      })),
-    );
-
-  const isItemInCart =
-    hasHydrated && items.some((item) => item.product.id === id);
+  const hasHydrated = useCartStore((state) => state.hasHydrated);
+  const addItem = useCartStore((state) => state.addItem);
+  const isItemInCart = useCartStore((state) =>
+    state.items.some((item) => item.product.id === id),
+  );
 
   const handleAddToCart = () => {
     addItem({ id, name, price, image, category });

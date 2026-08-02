@@ -1,11 +1,12 @@
+import { memo } from "react";
 import Image from "next/image";
 import { CartProduct } from "@/lib/types";
 import classes from "@/components/Cart/CartItem.module.css";
 
 interface CartItemProps extends CartProduct {
-  onIncrease: () => void;
-  onDecrease: () => void;
-  onRemove: () => void;
+  onIncrease: (id: string) => void;
+  onDecrease: (id: string) => void;
+  onRemove: (id: string) => void;
 }
 
 const CartItem = ({
@@ -32,18 +33,24 @@ const CartItem = ({
       <p className={classes.price}>${product.price.toFixed(2)}</p>
 
       <div className={classes.qty}>
-        <button className={classes.qtyBtn} onClick={onDecrease}>
+        <button
+          className={classes.qtyBtn}
+          onClick={() => onDecrease(product.id)}
+        >
           −
         </button>
         <span>{quantity}</span>
-        <button className={classes.qtyBtn} onClick={onIncrease}>
+        <button
+          className={classes.qtyBtn}
+          onClick={() => onIncrease(product.id)}
+        >
           +
         </button>
       </div>
 
       <div className={classes.totalWrapper}>
         <p className={classes.total}>${total}</p>
-        <button className={classes.removeBtn} onClick={onRemove}>
+        <button className={classes.removeBtn} onClick={() => onRemove(product.id)}>
           ×
         </button>
       </div>
@@ -51,4 +58,4 @@ const CartItem = ({
   );
 };
 
-export default CartItem;
+export default memo(CartItem);
