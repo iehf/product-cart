@@ -4,6 +4,9 @@ import { Product } from "../types";
 import { randomUUID } from "crypto";
 import { revalidatePath } from "next/cache";
 import { productService } from "@/lib/services/productService";
+import log from "@/lib/logger/logger";
+
+const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
 export interface ProductFormValues {
   name?: string;
@@ -39,8 +42,11 @@ export async function submitProduct(
   if (!price || isNaN(parseFloat(price)) || parseFloat(price) <= 0)
     errors.price = "Valid price is required.";
   if (!category?.trim()) errors.category = "Category is required.";
-  if (!(image instanceof File) || image.size === 0)
+  if (!(image instanceof File) || image.size === 0) {
     errors.image = "Image is required.";
+  } else if (!ALLOWED_IMAGE_TYPES.includes(image.type)) {
+    errors.image = "Only JPEG, PNG, WEBP or GIF images are allowed.";
+  }
 
   if (Object.keys(errors).length > 0) {
     return { errors, values };
@@ -59,7 +65,8 @@ export async function submitProduct(
   try {
     await productService.saveProduct(product, image);
     revalidatePath("/");
-  } catch {
+  } catch (error) {
+    log.error("[action] submitProduct failed: ", error);
     return { errors: { general: "Failed to save product. Try again." } };
   }
 

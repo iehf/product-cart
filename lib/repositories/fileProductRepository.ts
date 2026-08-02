@@ -3,6 +3,7 @@ import { ProductRepository } from "./productRepository.interface";
 import log from "@/lib/logger/logger";
 import { readFile, writeFile, unlink } from "fs/promises";
 import path from "path";
+import { randomUUID } from "crypto";
 
 const dataFilepath = path.join(process.cwd(), "lib/data/products.json");
 const uploadDir = path.join(process.cwd(), "public/products");
@@ -19,7 +20,8 @@ export class FileProductRepository implements ProductRepository {
   }
 
   async save(product: Product, file: File): Promise<void> {
-    const imagePath = path.join(uploadDir, file.name);
+    const safeFileName = `${randomUUID()}${path.extname(file.name).toLowerCase()}`;
+    const imagePath = path.join(uploadDir, safeFileName);
 
     try {
       const bytes = await file.arrayBuffer();
@@ -28,7 +30,7 @@ export class FileProductRepository implements ProductRepository {
 
       const productWithImage: Product = {
         ...product,
-        image: `/products/${product.image}`,
+        image: `/products/${safeFileName}`,
       };
 
       const products = await this.getAll();

@@ -4,6 +4,8 @@ import log from "@/lib/logger/logger";
 import { getStorage } from "firebase-admin/storage";
 import { getFirestore } from "firebase-admin/firestore";
 import { getFirebaseAdminApp } from "@/lib/firebase/firebaseAdmin";
+import { randomUUID } from "crypto";
+import path from "path";
 
 const COLLECTION = "products";
 
@@ -20,8 +22,9 @@ export class FirebaseProductRepository implements ProductRepository {
   }
 
   async save(product: Product, file: File): Promise<void> {
+    const safeFileName = `${randomUUID()}${path.extname(file.name).toLowerCase()}`;
     const bucket = getStorage(getFirebaseAdminApp()).bucket();
-    const fileRef = bucket.file(`products/${file.name}`);
+    const fileRef = bucket.file(`products/${safeFileName}`);
 
     try {
       await fileRef.save(Buffer.from(await file.arrayBuffer()));
@@ -29,7 +32,7 @@ export class FirebaseProductRepository implements ProductRepository {
 
       const productWithImage: Product = {
         ...product,
-        image: `https://storage.googleapis.com/${bucket.name}/products/${file.name}`,
+        image: `https://storage.googleapis.com/${bucket.name}/products/${safeFileName}`,
       };
 
       const db = getFirestore(getFirebaseAdminApp());
